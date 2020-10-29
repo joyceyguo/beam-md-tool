@@ -6,8 +6,6 @@ When you first clone clone, run:
 
 ```bash
 npm install
-npm run build
-npm start
 ```
 
 First, run the development server:
