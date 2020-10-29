@@ -1,12 +1,61 @@
 
 
-.lesson{
+
+.title{
     background: rgb(26, 67, 115);
+    color: white;
+
+    padding: 20px;
+    margin: auto;
+
     text-align: center;
-    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
     align-items: center;
 
+    
+    border-radius: 10px;
 
 
+}
 
+.content{
+    
+    background: #E7711C;
+    border-radius: 10px;
+
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+    align-items: center;
+
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+
+}
+
+.img{
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+
+}
+
+
+.vid{
+    
+
+    display: block;
+    margin: 0 auto;
 }
