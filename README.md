@@ -8,7 +8,7 @@ When you first clone clone, run:
 npm install
 npm run build
 npm start
-'''
+```
 
 First, run the development server:
 
