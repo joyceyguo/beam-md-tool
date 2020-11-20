@@ -1,7 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import ReactPlayer from "react-player"
+import ReactDOM from 'react-dom'
 import styles from '../../styles/lesson.module.css'
+import Quiz from './quiz1';
 
 
 
@@ -23,7 +25,7 @@ const updateScore = e => {
 function lesson1() {
     return(
         
-        <div className={styles.content}>
+        <div className={styles.content} id="root">
             <img className={styles.img} src="/beam_logo_transp.png" alt=""/>
             <h1 className={styles.title}>Lesson 1</h1>
             <p className={styles.text}>
@@ -54,7 +56,9 @@ function lesson1() {
                 />
             </div> 
 
-
+            <div>
+                <Quiz></Quiz>
+            </div>
             <div className={styles.quiz}>          
                 <form id="form1" onSubmit={updateScore}>
                     <h2>Which is the best description of a variable?</h2>
@@ -111,3 +115,7 @@ function lesson1() {
 }
 
 export default lesson1
+
+const rootElement = document.getElementById('root')
+ReactDOM.render(<lesson1></lesson1>, rootElement)
+
