@@ -14,7 +14,7 @@ export default function Home() {
           Welcome to <a href="https://beam.berkeley.edu/">BEAM!</a>
         </h1>
 
-        
+
 
         <div className={styles.grid}>
           <a href="http://localhost:3000/lessons/lesson1" className={styles.card}>
@@ -47,7 +47,7 @@ export default function Home() {
             <p> Lesson description here. </p>
           </a>
 
-          
+
         </div>
       </main>
 
@@ -64,3 +64,22 @@ export default function Home() {
     </div>
   )
 }
+// import useSWR from 'swr'
+// import Person from '../components/Person'
+//
+// const fetcher = (url) => fetch(url).then((res) => res.json())
+//
+// export default function Index() {
+//   const { data, error } = useSWR('/api/people', fetcher)
+//
+//   if (error) return <div>Failed to load</div>
+//   if (!data) return <div>Loading...</div>
+//
+//   return (
+//     <ul>
+//       {data.map((p, i) => (
+//         <Person key={i} person={p} />
+//       ))}
+//     </ul>
+//   )
+// }
