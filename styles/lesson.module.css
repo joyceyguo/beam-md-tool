@@ -42,6 +42,42 @@
     color: #FFFFFF;
 }
 
+.question_title{   
+    background: #E7711C;
+    border-radius: 10px;
+
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 2px;
+
+    display: flex;
+
+    width: 18%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.question{   
+    background: rgb(26, 67, 115);
+    border-radius: 10px;
+
+    padding: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+    display: flex;
+
+
+    width: 30%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
 .videoblock{
     display: flex;
     flex-direction: row;

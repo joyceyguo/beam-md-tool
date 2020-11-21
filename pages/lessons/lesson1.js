@@ -118,15 +118,16 @@ function lesson1() {
 				</div>
 			) : (
 				<>
-					<div className={styles.quizopt}>
-						<div className={styles.quizopt}>
-							<span>Question {currentQuestion + 1}</span>
-						</div>
-						<div className={styles.quizopt}>{questions[currentQuestion].questionText}</div>
-					</div>
+
+                    <div className={styles.question_title}>
+                        <span>Question {currentQuestion + 1}</span>
+                    </div>
+                    
+                    <div className={styles.question}>{questions[currentQuestion].questionText}</div>
+					
 					<div className={styles.quizbtn}>
 						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+							<button className={styles.quiz} onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}
 					</div>
 				</>
