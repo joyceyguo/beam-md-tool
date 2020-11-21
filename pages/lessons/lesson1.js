@@ -5,9 +5,17 @@ import ReactPlayer from "react-player"
 import ReactDOM from 'react-dom'
 import styles from '../../styles/lesson.module.css'
 
+import useSWR from 'swr'
+import Person from '../../components/Person'
+
+
+
 
 
 function lesson1() {
+    
+
+      
     const questions = [
 		{
 			questionText: 'What is the capital of France?',
@@ -46,7 +54,7 @@ function lesson1() {
 			],
 		},
 	];
-
+    
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
@@ -62,7 +70,11 @@ function lesson1() {
 		} else {
 			setShowScore(true);
 		}
-	};
+    };
+    const { data, error } = useSWR('../api/people', fetcher)
+    if (error) return <div>Failed to load</div>
+    if (!data) return <div>Loading...</div>
+    
     return(
         
         <div className={styles.content}>
@@ -142,6 +154,13 @@ function lesson1() {
                         <button type="submit" value="Submit" className={styles.quizbtn}>Submit</button>
                     </form>
                 </div>
+                
+                <ul>
+                   {data.map((p, i) => (
+                     <Person key={i} person={p} />
+                   ))}
+                </ul>
+                
 
             </div>
 
@@ -158,4 +177,7 @@ function lesson1() {
     
 }
 
+
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 export default lesson1
