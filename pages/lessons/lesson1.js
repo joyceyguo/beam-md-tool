@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react';
+
 import Image from 'next/image'
 import ReactPlayer from "react-player"
 import ReactDOM from 'react-dom'
 import styles from '../../styles/lesson.module.css'
-import Quiz from './quiz1';
 
 
 
@@ -23,9 +23,64 @@ const updateScore = e => {
 
 
 function lesson1() {
+    const questions = [
+		{
+			questionText: 'What is the capital of France?',
+			answerOptions: [
+				{ answerText: 'New York', isCorrect: false },
+				{ answerText: 'London', isCorrect: false },
+				{ answerText: 'Paris', isCorrect: true },
+				{ answerText: 'Dublin', isCorrect: false },
+			],
+		},
+		{
+			questionText: 'Who is CEO of Tesla?',
+			answerOptions: [
+				{ answerText: 'Jeff Bezos', isCorrect: false },
+				{ answerText: 'Elon Musk', isCorrect: true },
+				{ answerText: 'Bill Gates', isCorrect: false },
+				{ answerText: 'Tony Stark', isCorrect: false },
+			],
+		},
+		{
+			questionText: 'The iPhone was created by which company?',
+			answerOptions: [
+				{ answerText: 'Apple', isCorrect: true },
+				{ answerText: 'Intel', isCorrect: false },
+				{ answerText: 'Amazon', isCorrect: false },
+				{ answerText: 'Microsoft', isCorrect: false },
+			],
+		},
+		{
+			questionText: 'How many Harry Potter books are there?',
+			answerOptions: [
+				{ answerText: '1', isCorrect: false },
+				{ answerText: '4', isCorrect: false },
+				{ answerText: '6', isCorrect: false },
+				{ answerText: '7', isCorrect: true },
+			],
+		},
+	];
+
+	const [currentQuestion, setCurrentQuestion] = useState(0);
+	const [showScore, setShowScore] = useState(false);
+	const [score, setScore] = useState(0);
+
+	const handleAnswerOptionClick = (isCorrect) => {
+		if (isCorrect) {
+			setScore(score + 1);
+		}
+
+		const nextQuestion = currentQuestion + 1;
+		if (nextQuestion < questions.length) {
+			setCurrentQuestion(nextQuestion);
+		} else {
+			setShowScore(true);
+		}
+	};
     return(
         
-        <div className={styles.content} id="root">
+        <div className={styles.content}>
             <img className={styles.img} src="/beam_logo_transp.png" alt=""/>
             <h1 className={styles.title}>Lesson 1</h1>
             <p className={styles.text}>
@@ -56,24 +111,27 @@ function lesson1() {
                 />
             </div> 
 
-            <div>
-                <Quiz></Quiz>
-            </div>
-            <div className={styles.quiz}>          
-                <form id="form1" onSubmit={updateScore}>
-                    <h2>Which is the best description of a variable?</h2>
-                    <div className={styles.quizopt}>
-                        <label for="var_string"><input type="radio" name="variable" value="0" id="var_string" />Identifies a portion of a string.</label>
-                        <label for="var_join"><input type="radio" name="variable" value="0" id="var_join" />A method to join strings.</label>
-                        <label for="var_info"><input type="radio" name="variable" value="25" id="var_info" />Allows you to store information so it can be reused throughout the program</label>
-                        <label for="var_condition"><input type="radio" name="variable" value="0" id="var_condition"/>Allows you to make a decision based on a condition.</label>
-                    </div>
-                    
-                    <button type="submit" value="Submit" className={styles.quizbtn}>Submit</button>
-                </form>
-                <p>Your grade is: <span id="grade">__</span></p>
-                <p id="grade2"></p>
-            </div>
+            <div className={styles.content}>
+			{showScore ? (
+				<div className={styles.text}>
+					You scored {score} out of {questions.length}
+				</div>
+			) : (
+				<>
+					<div className={styles.quizopt}>
+						<div className={styles.quizopt}>
+							<span>Question {currentQuestion + 1}</span>
+						</div>
+						<div className={styles.quizopt}>{questions[currentQuestion].questionText}</div>
+					</div>
+					<div className={styles.quizbtn}>
+						{questions[currentQuestion].answerOptions.map((answerOption) => (
+							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+						))}
+					</div>
+				</>
+			)}
+		    </div>
 
             <div>
                 <h2 className={styles.sectheader}>Mentor Development Presentations</h2>
@@ -115,7 +173,3 @@ function lesson1() {
 }
 
 export default lesson1
-
-const rootElement = document.getElementById('root')
-ReactDOM.render(<lesson1></lesson1>, rootElement)
-
