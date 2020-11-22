@@ -14,9 +14,18 @@ export default function Home() {
           Welcome to <a href="https://beam.berkeley.edu/">BEAM!</a>
         </h1>
 
+        
+
 
 
         <div className={styles.grid}>
+        <a href="http://localhost:3000/discussion" className={styles.card}>
+            <h3>DISCUSSION testing &rarr;</h3>
+            <p> Discussion posts </p>
+          </a>
+
+
+
           <a href="http://localhost:3000/lessons/lesson1" className={styles.card}>
             <h3>Lesson 1 &rarr;</h3>
             <p> Lesson description here. </p>
