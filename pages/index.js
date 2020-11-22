@@ -28,12 +28,12 @@ export default function Home() {
 
           <a href="http://localhost:3000/lessons/lesson1" className={styles.card}>
             <h3>Lesson 1 &rarr;</h3>
-            <p> Lesson description here. </p>
+            <p> Being a Champion </p>
           </a>
 
-          <a href="" className={styles.card}>
+          <a href="http://localhost:3000/lessons/lesson2" className={styles.card}>
             <h3>Lesson 2 &rarr;</h3>
-            <p> Lesson description here. </p>
+            <p> BEAM's Impact </p>
           </a>
 
           <a href="" className={styles.card}>
