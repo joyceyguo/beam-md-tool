@@ -5,9 +5,17 @@ import ReactPlayer from "react-player"
 import ReactDOM from 'react-dom'
 import styles from '../../styles/lesson.module.css'
 
+import useSWR from 'swr'
+import Person from '../../components/Person'
+
+
+
 
 
 function lesson1() {
+    
+
+      
     const questions = [
 		{
 			questionText: 'What is the capital of France?',
@@ -46,7 +54,7 @@ function lesson1() {
 			],
 		},
 	];
-
+    
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
@@ -62,40 +70,48 @@ function lesson1() {
 		} else {
 			setShowScore(true);
 		}
-	};
+    };
+    {/*
+    const { data, error } = useSWR('../api/people', fetcher)
+    if (error) return <div>Failed to load</div>
+    if (!data) return <div>Loading...</div>
+    */}
+    
     return(
         
         <div className={styles.content}>
             <img className={styles.img} src="/beam_logo_transp.png" alt=""/>
             <h1 className={styles.title}>Lesson 1</h1>
             <p className={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Eget nullam non nisi est sit amet facilisis magna etiam. 
-                Varius sit amet mattis vulputate. Duis at tellus at urna condimentum. 
-                Eu sem integer vitae justo eget magna fermentum iaculis. 
-                Sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur.
-                 Volutpat est velit egestas dui id ornare arcu odio. 
-                 Bibendum enim facilisis gravida neque. Ullamcorper dignissim cras t
-                 incidunt lobortis feugiat vivamus at. In aliquam sem fringilla ut mor
+            As mentors, it is so easy to get caught up in the material we are teaching; 
+            however, students who become lost in the conversation don't learn and don't grow. 
+            How do we ensure that we are inclusive of all types of students, and what can we 
+            do to be a role model and champion for the students who don't see STEM education 
+            as a possibility for themselves. As mentors, we can facilitate some really easy methods to foster
+                    inclusivity in the classroom. Firstly, we can outline instructions 
+                    and expectations from the start. Such instructions ensure that every
+                    student knows what to do in terms of responsibilities!
+
             </p>
             <div className={styles.videoblock}>
                 <p className={styles.text, styles.lefttext}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Eget nullam non nisi est sit amet facilisis magna etiam. 
-                    Varius sit amet mattis vulputate. Duis at tellus at urna condimentum. 
-                    Eu sem integer vitae justo eget magna fermentum iaculis. 
-                    Sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur.
-                    Volutpat est velit egestas dui id ornare arcu odio. 
-                    Bibendum enim facilisis gravida neque. Ullamcorper dignissim cras t
-                    incidunt lobortis feugiat vivamus at. In aliquam sem fringilla ut mor
+                    To further aid this, keep things straightforward and to the point. This simple 
+                    step allows everyone to be in the loop irregardless of previous 
+                    knowledge or experience. Third, live by your word. This one may seem 
+                    simple, but to be there for your students, you must follow through with 
+                    your word to establish trust. Fourth, assing responsibilities that match
+                    strengths and interests. This individualistic mentorship allows you to 
+                    foster an education to each student's learning style (see Learning styles
+                    page for more information on this!). The student should not have to adapt
+                    to your teaching style; you should adapt to their learning style. Lastly,
+                    be flexible and adaptable. If something isn't going as planned, don't worry
+                    about it! Keep on moving forward and adjust!
                 </p>
                 <ReactPlayer className={styles.vid}
                     url="https://www.youtube.com/watch?v=SFnMTHhKdkw&vl=en"
                 />
             </div> 
-
+            <h2 className={styles.sectheader}> Check Your Knowledge!! </h2>
             <div className={styles.content}>
 			{showScore ? (
 				<div className={styles.text}>
@@ -110,11 +126,14 @@ function lesson1() {
                     
                     <div className={styles.question}>{questions[currentQuestion].questionText}</div>
 					
-					<div className={styles.quizbtn}>
+					<div className={styles.quiz}>
 						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button className={styles.quiz} onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+							<button className={styles.quizbtn} onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}
 					</div>
+                    <div className={styles.title}>
+                        Your current score is {score}
+                    </div>
 				</>
 			)}
 		    </div>
@@ -142,6 +161,14 @@ function lesson1() {
                         <button type="submit" value="Submit" className={styles.quizbtn}>Submit</button>
                     </form>
                 </div>
+                {/*
+                <div>
+                   {data.map((p, i) => (
+                     <Person key={i} person={p} />
+                   ))}
+                </div>
+                */}
+                
 
             </div>
 
@@ -158,4 +185,5 @@ function lesson1() {
     
 }
 
+// const fetcher = (url) => fetch(url).then((res) => res.json());
 export default lesson1
