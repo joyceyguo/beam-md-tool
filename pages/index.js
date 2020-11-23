@@ -14,9 +14,6 @@ export default function Home() {
           Welcome to <a href="https://beam.berkeley.edu/">BEAM!</a>
         </h1>
 
-        
-
-
 
         <div className={styles.grid}>
         <a href="http://localhost:3000/discussion" className={styles.card}>
@@ -46,29 +43,11 @@ export default function Home() {
             <p> Lesson description here. </p>
           </a>
 
-          <a href="" className={styles.card}>
-            <h3>Lesson 5 &rarr;</h3>
-            <p> Lesson description here. </p>
-          </a>
-
-          <a href="" className={styles.card}>
-            <h3>Lesson 6 &rarr;</h3>
-            <p> Lesson description here. </p>
-          </a>
-
-
         </div>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+        
       </footer>
     </div>
   )

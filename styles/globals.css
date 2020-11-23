@@ -1,10 +1,13 @@
+@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700);
+
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font: Poppins;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  /* font-family: 'Lobster', sans-serif; */
+  background-color: #F7F5F3;
 }
 
 a {
