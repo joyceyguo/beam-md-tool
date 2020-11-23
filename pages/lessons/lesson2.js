@@ -18,41 +18,22 @@ function lesson2() {
       
     const questions = [
 		{
-			questionText: 'What is the capital of France?',
+			questionText: 'Which of these is not an example of the Pareto Principle?',
 			answerOptions: [
-				{ answerText: 'New York', isCorrect: false },
-				{ answerText: 'London', isCorrect: false },
-				{ answerText: 'Paris', isCorrect: true },
-				{ answerText: 'Dublin', isCorrect: false },
-			],
-		},
-		{
-			questionText: 'Who is CEO of Tesla?',
+				{ answerText: "You wear 20% of the clothes in your closet 80% of the time.", isCorrect: false },
+				{ answerText: '20% of society holds 80% of the wealth', isCorrect: false },
+				{ answerText: '20% of students got an 80% on their math test', isCorrect: true },
+				{ answerText: '80% of student achievement comes from 20% of the work that we do with them', isCorrect: false },
+            ],
+        },
+        {
+            questionText: 'What does expanding your edges mean?',
 			answerOptions: [
-				{ answerText: 'Jeff Bezos', isCorrect: false },
-				{ answerText: 'Elon Musk', isCorrect: true },
-				{ answerText: 'Bill Gates', isCorrect: false },
-				{ answerText: 'Tony Stark', isCorrect: false },
+				{ answerText: 'Visiting as many countries in the world', isCorrect: false },
+				{ answerText: 'Continuously learning how to be a better mentor', isCorrect: true },
+				{ answerText: 'Becoming an expert in your current subject', isCorrect: false }
 			],
-		},
-		{
-			questionText: 'The iPhone was created by which company?',
-			answerOptions: [
-				{ answerText: 'Apple', isCorrect: true },
-				{ answerText: 'Intel', isCorrect: false },
-				{ answerText: 'Amazon', isCorrect: false },
-				{ answerText: 'Microsoft', isCorrect: false },
-			],
-		},
-		{
-			questionText: 'How many Harry Potter books are there?',
-			answerOptions: [
-				{ answerText: '1', isCorrect: false },
-				{ answerText: '4', isCorrect: false },
-				{ answerText: '6', isCorrect: false },
-				{ answerText: '7', isCorrect: true },
-			],
-		},
+		}
 	];
     
 	const [currentQuestion, setCurrentQuestion] = useState(0);
