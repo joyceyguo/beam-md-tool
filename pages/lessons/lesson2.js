@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image'
 import ReactPlayer from "react-player"
 import ReactDOM from 'react-dom'
-import styles from '../../styles/lesson.module.css'
+import styles from '../../styles/Lessons.module.css'
 
 import useSWR from 'swr'
 import Person from '../../components/Person'

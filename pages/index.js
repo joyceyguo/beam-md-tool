@@ -3,53 +3,19 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <body >
+      <div className={styles.container}>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://beam.berkeley.edu/">BEAM!</a>
-        </h1>
-
-
-        <div className={styles.grid}>
-        <a href="http://localhost:3000/discussion" className={styles.card}>
-            <h3>DISCUSSION testing &rarr;</h3>
-            <p> Discussion posts </p>
-          </a>
-
-
-
-          <a href="http://localhost:3000/lessons/lesson1" className={styles.card}>
-            <h3>Lesson 1 &rarr;</h3>
-            <p> Being a Champion </p>
-          </a>
-
-          <a href="http://localhost:3000/lessons/lesson2" className={styles.card}>
-            <h3>Lesson 2 &rarr;</h3>
-            <p> BEAM's Impact </p>
-          </a>
-
-          <a href="" className={styles.card}>
-            <h3>Lesson 3 &rarr;</h3>
-            <p> Lesson description here. </p>
-          </a>
-
-          <a href="" className={styles.card}>
-            <h3>Lesson 4 &rarr;</h3>
-            <p> Lesson description here. </p>
-          </a>
-
+        <div className={styles.welcome}>
+          <h1 className={styles.title}>Hello, BEAM mentor 👋 </h1>
+          <h1 className={styles.subtitle}>Welcome to our mentor hub, <br/>
+            where we learn and grow together 🌿   </h1>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        
-      </footer>
-    </div>
+      
+      
+      </div>
+    </body>
+    
   )
 }
 // import useSWR from 'swr'

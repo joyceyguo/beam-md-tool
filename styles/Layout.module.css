@@ -10,6 +10,10 @@
     height: 88px;
 }
 
+.logo:hover {
+    transform: translate(3px, 3px)
+}
+
 .img {
     position: static;
     width: 173px;
@@ -80,4 +84,5 @@
     line-height: 23px;
     /* identical to box height */
     color: #393D51;
+    margin-bottom: 60px;
 }
