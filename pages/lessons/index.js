@@ -1,28 +1,37 @@
-import Head from 'next/head'
 import styles from '../../styles/Lesson.module.css'
+
+const LessonCard = ({ title, description, href }) => {
+  return (
+    <div className={styles.card}>
+      <a href={href}>
+            <h3> {title} &rarr; </h3>
+            <p> {description} </p>
+          </a>
+    </div>
+  ) 
+}
+
+// class LessonCard extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//       </div>
+//     )
+//   }
+// }
 
 export default function Lesson() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://beam.berkeley.edu/">BEAM!</a>
-        </h1>
-
-
+      
+      <LessonCard title="Lesson 1" description="mentoring" href="/lessons/lesson1"></LessonCard>   
+        
         <div className={styles.grid}>
         <a href="http://localhost:3000/discussion" className={styles.card}>
             <h3>DISCUSSION testing &rarr;</h3>
             <p> Discussion posts </p>
           </a>
-
-
-
           <a href="http://localhost:3000/lessons/lesson1" className={styles.card}>
             <h3>Lesson 1 &rarr;</h3>
             <p> Being a Champion </p>
@@ -44,11 +53,7 @@ export default function Lesson() {
           </a>
 
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        
-      </footer>
+    
     </div>
   )
 }
