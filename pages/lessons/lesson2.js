@@ -25,12 +25,14 @@ function lesson2() {
 				{ answerText: '20% of students got an 80% on their math test', isCorrect: true },
 				{ answerText: '80% of student achievement comes from 20% of the work that we do with them', isCorrect: false },
             ],
+        },
+        {
             questionText: 'What does expanding your edges mean?',
 			answerOptions: [
 				{ answerText: 'Visiting as many countries in the world', isCorrect: false },
 				{ answerText: 'Continuously learning how to be a better mentor', isCorrect: true },
 				{ answerText: 'Becoming an expert in your current subject', isCorrect: false }
-			]
+			],
 		}
 	];
     
