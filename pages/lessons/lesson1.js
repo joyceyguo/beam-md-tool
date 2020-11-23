@@ -81,7 +81,7 @@ function lesson1() {
         
         <div className={styles.content}>
             <img className={styles.img} src="/beam_logo_transp.png" alt=""/>
-            <h1 className={styles.title}>Lesson 1</h1>
+            <h1 className={styles.title}>Lesson 1: Being a Champion</h1>
             <p className={styles.text}>
             As mentors, it is so easy to get caught up in the material we are teaching; 
             however, students who become lost in the conversation don't learn and don't grow. 

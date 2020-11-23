@@ -12,7 +12,7 @@ import Person from '../../components/Person'
 
 
 
-function lesson1() {
+function lesson2() {
     
 
       
@@ -81,7 +81,7 @@ function lesson1() {
         
         <div className={styles.content}>
             <img className={styles.img} src="/beam_logo_transp.png" alt=""/>
-            <h1 className={styles.title}>Lesson 1</h1>
+            <h1 className={styles.title}>Lesson 2: BEAM's Impact</h1>
             <p className={styles.text}>
             At the end of the day, what is our impact? When you just consider a single day, it seems rather insignificant. We, as BEAM, show up to a site (either in person or virtually) and teach elementary and middle schoolers a science lesson. Then, we leave, and the students continue on with their day, many likely already having forgotten what we taught. Other days, it may not even go so well. We may rant, "The supervisor wasn’t there, so the kids refused to listen to us. It was really hectic." All of these feelings are valid, and teaching can seem useless at times. In spite of all of this, remind yourself of the Pareto principle, where 80% of the effects come from 20% of the causes. 80% of your time is going to be spent on rather trivial tasks that are not going to present many results. 20% of your time is going to be spent on vital tasks that are going to produce an immense amount of results. Think of it this way, 80% of student achievement comes from just 20% of the work that you do with them. In terms of your other 80% of effort, you can take this to mean a lot of things. For example, this could be dealing with mentees fighting or materials breaking. This is why it is important to persevere through those moments.
             </p>
@@ -184,4 +184,4 @@ function lesson1() {
 }
 
 // const fetcher = (url) => fetch(url).then((res) => res.json());
-export default lesson1
+export default lesson2
