@@ -1,21 +1,64 @@
 import React from 'react'
 import useSWR from 'swr'
 import Person from '../components/Person'
+import styles from '../styles/Lessons.module.css'
+import sqlite3 from 'sqlite3'
+import { open } from 'sqlite'
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
 
-function discussion() {
-  const { data, error } = useSWR('/api/people', fetcher)
+  const db = await open({
+    filename: './mydb.db',
+    driver: sqlite3.Database
+  });
 
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
+  await db.run(
+  'INSERT INTO Posts (id, body, user_id, reply_id) VALUES ($a, $b, $c, $d)',
+  {$a: 1, $b: "This presentation taught me a lot about what it means to be a champion!", $c: 1, $d: 1}
+  );
+
+  await db.run(
+  'INSERT INTO Posts (id, body, user_id, reply_id) VALUES ($a, $b, $c, $d)',
+  {$a: 2, $b: "I agree! I really liked the part where they talked about what it means to be a leader!", $c: 2, $d: 1}
+  );
+
+  await db.run(
+  'INSERT INTO Posts (id, body, user_id, reply_id) VALUES ($a, $b, $c, $d)',
+  {$a: 3, $b: "This presentation was great! I wished it went a little more into detail on how I can recognize my privileges and biases to be a better champion to others.", $c: 3, $d: 1}
+  );
+
+  const ret = await db.all('SELECT * from Posts');
+  const result6 = await db.run('DELETE FROM Posts');
+
+  const json = JSON.parse(JSON.stringify(ret));
+
+  // Pass data to the page via props
+  return { props: { json } };
+}
+
+function discussion({ json }) {
+
+  //  const { data, error } = useSWR('/api/people', fetcher)
+
+  //if (error) return <div>Failed to load</div>
+  //if (!data) return <div>Loading...</div>
 
   return (
-    <ul>
-      {data.map((p, i) => (
-        <Person key={i} person={p} />
-      ))}
-    </ul>
+    <div className={styles.content}>
+        <img className={styles.img} src="/beam_logo_transp.png" alt=""/>
+        <h1 className={styles.title}>Lesson 1 Discussion Posts:</h1>
+        <p className={styles.text}>
+         User {json[0].id}: {json[0].body}
+        </p>
+        <p className={styles.title}>
+         User {json[1].id}: {json[1].body}
+        </p>
+        <p className={styles.text}>
+         User {json[2].id}: {json[2].body}
+        </p>
+        </div>
   )
 }
 
@@ -32,7 +75,7 @@ function discussion() {
 //                 {posts.map((post) => (
 //                     <li>{post.title}</li>
 //                 ))
-                    
+
 //                 }
 //             </ul> */}
 
@@ -67,8 +110,8 @@ function discussion() {
 //     const paths = posts.map((post) => ({
 //         params: {id: post.id},
 //     }))
-    
-    
+
+
 //     return{
 //         paths,
 //         fallback: true

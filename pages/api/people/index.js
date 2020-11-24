@@ -15,20 +15,13 @@ export default async function handler(req, res) {
       force: true
   })
   const result = await db.run(
-  'INSERT INTO Category (id, name) VALUES ($ONE, $TWO)',
-  {$ONE: 2, $TWO: "Test2"}
-)
-  const meme = await db.run(
-  'INSERT INTO Category (id, name) VALUES ($ONE, $TWO)',
-  {$ONE: 3, $TWO: "4"}
-  )
-
-  const result2 = await db.run(
-  'INSERT INTO Category (id, name) VALUES ($ONE, $TWO)',
-  {$ONE: 5, $TWO: "TEST5"}
+  'INSERT INTO Posts (id, body, user_id, reply_id) VALUES ($a, $b, $c, $d)',
+  {$a: 1, $b: "This is test post 1 - parent.", $c: 1, $d: 1}
   )
 
   const people = await db.all('select * from category where id == 1');
+
+  const result6 = await db.run('DELETE FROM Posts')
 
   res.json(people);
 }

@@ -1,4 +1,4 @@
-import { style } from '@material-ui/system';
+//import { style } from '@material-ui/system';
 import Head from 'next/head'
 import Link from 'next/Link'
 import styles from '../styles/Layout.module.css';
@@ -15,10 +15,10 @@ const Layout = ({ children }) => (
                 <nav>
                     <div className={styles.navbar}>
                         <a className={styles.logo} href="https://beam.berkeley.edu/">
-                            <img className={styles.img} src="/beam_logo_transp.png" alt="">     
+                            <img className={styles.img} src="/beam_logo_transp.png" alt="">
                             </img>
                         </a>
-                        
+
                         <div className={styles.nav}>
                             <Link href="/">
                                 <a className={styles.link}>home</a>
@@ -36,12 +36,12 @@ const Layout = ({ children }) => (
         </div>
         <div>{ children }</div>
         <div>
-            <footer className={styles.footer}> 
+            <footer className={styles.footer}>
                 Made with ❤ and ☕ by BEAM Secret Service © 2020
             </footer>
         </div>
     </div>
-    
+
 )
 
 export default Layout

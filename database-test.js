@@ -46,6 +46,7 @@ import { open } from 'sqlite'
 
     const result6 = await db.run('DELETE FROM Posts')
     console.log("CHILLERS", people)
+    console.log(JSON.stringify(people));
 
 
 
