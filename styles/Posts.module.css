@@ -1,0 +1,44 @@
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+.post {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    padding: 10px;
+  
+    width: 960px;
+    height: 150px;
+  
+
+    border: 2px solid #393D51;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    left: calc(50% - 204px/2);
+    top: calc(50% - 76px/2);
+}
+
+
+.post h4 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+
+}
+
+.post p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+}

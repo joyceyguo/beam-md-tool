@@ -1,9 +1,12 @@
 import React from 'react'
 import useSWR from 'swr'
 import Person from '../components/Person'
-import styles from '../styles/Lessons.module.css'
+import styles from '../styles/Posts.module.css'
 import sqlite3 from 'sqlite3'
 import { open } from 'sqlite'
+
+
+
 
 // This gets called on every request
 export async function getServerSideProps() {
@@ -38,6 +41,18 @@ export async function getServerSideProps() {
   return { props: { json } };
 }
 
+  const Post = ({user, idx}) => {
+    return (
+      <div className={styles.post}> 
+        <h4>
+            User {{user}[{idx}].id}
+          </h4>
+          <p>
+            {{user}[{idx}].body}
+          </p>
+      </div>
+    )
+    }
 function discussion({ json }) {
 
   //  const { data, error } = useSWR('/api/people', fetcher)
@@ -46,19 +61,35 @@ function discussion({ json }) {
   //if (!data) return <div>Loading...</div>
 
   return (
-    <div className={styles.content}>
-        <img className={styles.img} src="/beam_logo_transp.png" alt=""/>
-        <h1 className={styles.title}>Lesson 1 Discussion Posts:</h1>
-        <p className={styles.text}>
-         User {json[0].id}: {json[0].body}
-        </p>
-        <p className={styles.title}>
-         User {json[1].id}: {json[1].body}
-        </p>
-        <p className={styles.text}>
-         User {json[2].id}: {json[2].body}
-        </p>
+    <div className={styles.container}>
+      <div>
+          <h1 className={styles.post}>Lesson 1 Discussion Posts:</h1>
+          <div className={styles.post}>
+            <h4> User {json[0].id}</h4>
+            <p>{json[0].body}</p>
+          </div>
+          
+
+          <div className={styles.post}>
+            <h4> User {json[1].id}</h4>
+            <p>{json[1].body}</p>
+          </div>
+          <div className={styles.post}>
+            <h4> User {json[2].id}</h4>
+            <p>{json[2].body}</p>
         </div>
+
+          
+
+
+          {/* <p className={styles.}>
+            User {json[1].id}: {json[1].body}
+          </p>
+          <p className={styles.}>
+            User {json[2].id}: {json[2].body}
+          </p> */}
+        </div>
+      </div>
   )
 }
 
