@@ -1,4 +1,5 @@
-import styles from '../../styles/Lesson.module.css'
+import styles from '../../styles/lesson.module.css'
+
 
 const LessonCard = ({ title, description, href }) => {
   return (
@@ -25,13 +26,9 @@ export default function Lesson() {
     <div className={styles.container}>
 
       
-      <LessonCard title="Lesson 1" description="mentoring" href="/lessons/lesson1"></LessonCard>   
+      <h1> Our Awesome Mentor Development Lessons! </h1>
         
         <div className={styles.grid}>
-        <a href="http://localhost:3000/discussion" className={styles.card}>
-            <h3>DISCUSSION testing &rarr;</h3>
-            <p> Discussion posts </p>
-          </a>
           <a href="http://localhost:3000/lessons/lesson1" className={styles.card}>
             <h3>Lesson 1 &rarr;</h3>
             <p> Being a Champion </p>

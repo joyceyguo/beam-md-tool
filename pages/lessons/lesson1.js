@@ -18,41 +18,24 @@ function lesson1() {
       
     const questions = [
 		{
-			questionText: 'What is the capital of France?',
+			questionText: 'Which of thsese is NOT a simple step to allow everyone to be in the loop irregardless of previous knowledge or experience?',
 			answerOptions: [
-				{ answerText: 'New York', isCorrect: false },
-				{ answerText: 'London', isCorrect: false },
-				{ answerText: 'Paris', isCorrect: true },
-				{ answerText: 'Dublin', isCorrect: false },
+				{ answerText: 'Outine instructions from the start', isCorrect: false },
+				{ answerText: 'Keep things straightforward', isCorrect: false },
+				{ answerText: 'Ask the class as a whole who knows the material before the lesson starts', isCorrect: true },
+                { answerText: 'Live by your word', isCorrect: false },
+                { answerText: 'Be flexible and adaptable', isCorrect: false },
 			],
-		},
-		{
-			questionText: 'Who is CEO of Tesla?',
+        }, 
+        {
+			questionText: 'Which of thsese is NOT a method to check that our efforts are well-intentioned??',
 			answerOptions: [
-				{ answerText: 'Jeff Bezos', isCorrect: false },
-				{ answerText: 'Elon Musk', isCorrect: true },
-				{ answerText: 'Bill Gates', isCorrect: false },
-				{ answerText: 'Tony Stark', isCorrect: false },
+				{ answerText: 'Check for culture-bound assumptions', isCorrect: false },
+				{ answerText: 'Consider diverse backgrounds and experiences', isCorrect: false },
+				{ answerText: 'Consider whether each student has equal accessiblity to materials', isCorrect: false },
+                { answerText: 'Assume that each student has equal accessibility to BEAM material because they showed up that day', isCorrect: true }
 			],
-		},
-		{
-			questionText: 'The iPhone was created by which company?',
-			answerOptions: [
-				{ answerText: 'Apple', isCorrect: true },
-				{ answerText: 'Intel', isCorrect: false },
-				{ answerText: 'Amazon', isCorrect: false },
-				{ answerText: 'Microsoft', isCorrect: false },
-			],
-		},
-		{
-			questionText: 'How many Harry Potter books are there?',
-			answerOptions: [
-				{ answerText: '1', isCorrect: false },
-				{ answerText: '4', isCorrect: false },
-				{ answerText: '6', isCorrect: false },
-				{ answerText: '7', isCorrect: true },
-			],
-		},
+		}
 	];
     
 	const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -111,6 +94,14 @@ function lesson1() {
                     url="https://www.youtube.com/watch?v=SFnMTHhKdkw&vl=en"
                 />
             </div> 
+            <p className={styles.text}>
+            Inclusive teaching is a mindset. Being aware of your inherent biases is essential before you go into a classroom. How are students who are naturally less socially naturally excluded from class conversation? How can we adapt education for those students? These questions are not easy to answer; however, being a champion does not mean just being a champion for the students who look up to you. You must seek to be a champion for students who are shy, who are unlike you, and who maybe simply don't like the subject. When we place special focus on these students, and not just the ones that raise their hand to every question, we begin to recognize that Being A Champion is not a simple task. Adopting this strategy allows great benefits for those who are left out. They get to build friendships with and learn among peers. They receive support in the general classroom without feeling isolated. They develop social competence. Eventually, they feel comfortable voicing their ideas and questions. The more vocal students also benefit. They get to interact with other types of people and communities that they might not meet otherwise. They develop a greater understanding and respect, and they build a stronger sense of social responsibility and comfort.
+
+            </p>
+            <p className={styles.text}>
+            Recognizing this, we should ask ourselves, "How do I know that my efforts are well-intentioned?" We should take into account culture-bound assumptions and experiences of our students. In addition, we should consider the diverse backgrounds and experiences of each student in the classroom and the accessibilty they have to course material. Students receiving the same education in the same classroom may not have the same accessibility to materials due to the nature that they grew up, remember that. So, be intentional in your interactions with students. Stand up for those students who need a champion to realize that STEM is for them. Be authentic. Be confident. Be a champion. 
+
+            </p>
             <h2 className={styles.sectheader}> Check Your Knowledge!! </h2>
             <div className={styles.content}>
 			{showScore ? (
